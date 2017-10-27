@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-var fs = require('fs')
-var path = require('path')
+import fs from 'fs'
+import path from 'path'
 try {
-  fs.statSync(path.join(__dirname, '../dist'))
+  fs.statSync(path. join(__dirname, '../dist'))
 } catch (e) {
   console.log(e)
   console.error('pls run `npm run build` first!')

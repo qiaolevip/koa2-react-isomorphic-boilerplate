@@ -1,10 +1,9 @@
+import webpack from 'webpack'
+import path from 'path'
+
 process.env.NODE_ENV = 'development'
 
-var webpack = require('webpack')
-var path = require('path')
-var rucksack = require('rucksack-css')
-var autoprefixer = require('autoprefixer')
-var includes = [
+const includes = [
   path.resolve(__dirname, 'app'),
   path.resolve(__dirname, 'platforms')
 ]
@@ -42,39 +41,33 @@ module.exports = {
         query: {
           presets: ['react-hmre'],
           plugins: [
-            ["inline-replace-variables", {
-              "__SERVER__": false
+            ['inline-replace-variables', {
+              '__SERVER__': false
             }]
           ]
         }
-      }, {
+      },
+      {
         test: /\.css$/,
         loader: 'style!css!postcss'
-      }, {
-        test: /\.less$/,
-        include: includes,
-        loader: 'style!css!less!postcss'
       },
-      { test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff' },
-      { test: /\.ttf$/, loader: 'url?limit=10000&minetype=application/octet-stream' },
-      { test: /\.eot$/, loader: 'file' },
-      { test: /\.svg$/, loader: 'url?limit=10000&minetype=image/svg+xml' },
-      { test: /\.(png|jpg|jpeg|gif)$/i, loader: 'url?limit=10000&name=[name].[ext]' },
-      { test: /\.json$/, loader: 'json' },
-      { test: /\.html?$/, loader: 'file?name=[name].[ext]' }
+      {
+        test: /\.styl$/,
+        include: includes,
+        loader: 'style!css!stylus!postcss'
+      },
+      {test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff'},
+      {test: /\.ttf$/, loader: 'url?limit=10000&minetype=application/octet-stream'},
+      {test: /\.eot$/, loader: 'file'},
+      {test: /\.svg$/, loader: 'url?limit=10000&minetype=image/svg+xml'},
+      {test: /\.(png|jpg|jpeg|gif)$/i, loader: 'url?limit=10000&name=[name].[ext]'},
+      {test: /\.json$/, loader: 'json'},
+      {test: /\.html?$/, loader: 'file?name=[name].[ext]'}
     ]
   },
-
-  postcss: [
-    rucksack(),
-    autoprefixer({
-      browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8']
-    })
-  ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 }
-

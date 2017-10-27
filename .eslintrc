@@ -12,7 +12,9 @@
   },
   "rules": {
     "func-style": [2, "declaration", { "allowArrowFunctions": true }],
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    // "semi": [0, "never"]
+    "semi": 0
   },
   "plugins": [
     "react"

@@ -7,8 +7,6 @@ var path = require('path')
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var extractStyle = new ExtractTextPlugin('all.min.css')
-var rucksack = require('rucksack-css')
-var autoprefixer = require('autoprefixer')
 var fs = require('fs')
 var nodeModules = fs.readdirSync('node_modules')
   .filter(function (i) {
@@ -39,9 +37,9 @@ module.exports = [{
         test: /\.css$/,
         loader: extractStyle.extract(['css', 'postcss'])
       }, {
-        test: /\.less$/,
+        test: /\.styl/,
         include: includes,
-        loader: extractStyle.extract(['css', 'less', 'postcss'])
+        loader: extractStyle.extract(['css', 'stylus', 'postcss'])
       },
       { test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff' },
       { test: /\.ttf$/, loader: 'url?limit=10000&minetype=application/octet-stream' },
@@ -52,12 +50,6 @@ module.exports = [{
       { test: /\.html?$/, loader: 'file?name=[name].[ext]' }
     ]
   },
-  postcss: [
-    rucksack(),
-    autoprefixer({
-      browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8']
-    })
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -108,12 +100,12 @@ module.exports = [{
         query: {
           plugins: [
             ["babel-plugin-transform-require-ignore", {
-              "extensions": [".less", ".css"]
+              "extensions": [".styl", ".css"]
             }]
           ]
         }
       }, {
-        test: /\.(css|less)$/,
+        test: /\.(css|styl)$/,
         loader: 'null'
       },
       { test: /\.woff2?$/, loader: 'null' },

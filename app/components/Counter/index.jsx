@@ -3,7 +3,8 @@
  * @Author Ling.
  * @Email i@zeroling.com
  */
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Counter extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ export default class Counter extends Component {
     decrement: PropTypes.func.isRequired,
     counter: PropTypes.number.isRequired
   }
-  render() {
+  render () {
     const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
 
     return (

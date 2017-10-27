@@ -4,7 +4,7 @@
  * @Email i@zeroling.com
  */
 import React, { Component } from 'react'
-import './header.less'
+import './header.styl'
 
 export default class Header extends Component {
   render () {

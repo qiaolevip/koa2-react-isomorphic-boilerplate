@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 import 'normalize.css'
-import '../common/layout.less'
+import '../common/layout.styl'
 
 class App extends Component {
   render () {
