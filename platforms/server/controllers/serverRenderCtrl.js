@@ -26,8 +26,15 @@ export default async (ctx, next, renderProps) => {
   }
 
   await Promise.all(prefetchTasks)
+  let keywords = config.keywords;
+  if (ctx.path === '/picture') {
+    keywords = 'picture';
+  }
+  // console.log(store.getState());
   await ctx.render('index', {
     title: config.title,
+    keywords,
+    description: config.description,
     dev: ctx.app.env === 'development',
     reduxData: store.getState(),
     app: renderToString(<Provider store={store}>

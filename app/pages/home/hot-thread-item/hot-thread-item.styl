@@ -1,0 +1,54 @@
+@import '../../../assets/styles/common.styl'
+
+.hot-thread-item
+  background: #fff
+  padding: px2rem(30)
+  border-top: 1px solid #e5e5e5
+  .item-wrap
+    display: block
+  &:first-child
+    border-top: none
+  .item-author
+    .info-avatar
+      img
+        width: px2rem(36)
+        height: px2rem(36)
+        border-radius: px2rem(36)
+        vertical-align: middle
+    .info-name
+      color: #687785
+      font-dpr: 12
+      margin: 0 px2rem(14) 0 px2rem(10)
+      display: inline-block
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      vertical-align: middle
+
+  .item-title
+    font-dpr: 16
+    color: #333
+    margin: px2rem(20) 0
+
+  .item-cont
+    color: #444
+    font-dpr: 14
+    position:relative;
+    line-height:1.5em;
+    max-height:3em;
+    overflow:hidden;
+
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+  .item-bot
+    margin-top: px2rem(20)
+    color: #ccc
+    font-dpr: 12
+
+    .info-wrap
+      margin-left: px2rem(20)
+      .num
+        margin-left: px2rem(8)

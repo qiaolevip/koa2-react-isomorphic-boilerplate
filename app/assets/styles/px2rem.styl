@@ -1,0 +1,11 @@
+px2rem(num)
+  num / (750/10/1) rem
+  
+font-dpr(size)
+  font-size size px
+
+  [data-dpr="2"] & 
+    font-size size * 2 px
+      
+  [data-dpr="3"] & 
+    font-size size * 3 px

@@ -4,8 +4,10 @@
  * @Email i@zeroling.com
  */
 import { combineReducers } from 'redux'
+import indexApp from './indexapp'
 import counter from './counter'
 
 export default combineReducers({
-  counter
+  counter,
+  indexApp
 })

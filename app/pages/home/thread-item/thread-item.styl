@@ -1,0 +1,55 @@
+@import '../../../assets/styles/common.styl'
+
+.thread-item
+  padding: px2rem(30)
+  border-top: 1px solid #e5e5e5
+  position: relative
+  background: #fff
+  &:first-child
+    border-top: none
+  .item-wrap
+    display: block
+    height: 100%
+
+  .thread-section
+    color: #9b9b9b
+    margin-bottom: px2rem(20)
+
+  .thread-title
+    font-dpr 16
+    color: #333333
+    line-height: 1.4
+  .thread-info
+    margin-top: px2rem(20)
+    line-height: px2rem(36)
+    color: #9b9b9b
+    .info-left
+      float: left
+      .info-avatar
+        img
+          width: px2rem(36)
+          height: px2rem(36)
+          border-radius: px2rem(36)
+          vertical-align: middle
+      .info-author
+        font-dpr: 12
+        margin: 0 px2rem(20) 0 px2rem(10)
+        display: inline-block
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+        vertical-align: middle
+      .info-time
+        display: inline-block
+        vertical-align: middle
+
+    .info-right
+      float: right
+      .info-wrap
+        margin-left: px2rem(18)
+        display: inline-block
+        vertical-align: middle
+        .num
+          margin-left: px2rem(8)
+        &:first-child
+          margin-left: 0

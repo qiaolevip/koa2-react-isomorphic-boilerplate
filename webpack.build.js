@@ -108,11 +108,11 @@ module.exports = [{
         test: /\.(css|styl)$/,
         loader: 'null'
       },
-      { test: /\.woff2?$/, loader: 'null' },
-      { test: /\.ttf$/, loader: 'null' },
-      { test: /\.eot$/, loader: 'null' },
-      { test: /\.svg$/, loader: 'null' },
-      { test: /\.(png|jpg|jpeg|gif|webp)$/i, loader: 'url?limit=10000' },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader?name=css/fonts/[name].[ext]'
+      },
+      {test: /\.(svg|png|jpe?g|gif)$/i, loader: 'url?limit=10000&name=[name].[ext]'},
       { test: /\.json$/, loader: 'json' }
     ]
   },
@@ -123,7 +123,8 @@ module.exports = [{
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new UglifyJsPlugin({
-      compress: { warnings: false }
+      compress: { warnings: false },
+      comments: false
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),

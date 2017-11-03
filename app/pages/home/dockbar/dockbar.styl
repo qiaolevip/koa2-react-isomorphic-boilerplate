@@ -1,0 +1,103 @@
+@import '../../../assets/styles/common.styl'
+
+.home-tabs
+
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: px2rem(100)
+  background: #fff
+  z-index: 102
+  border-top: 1px solid #e5e5e5
+
+  ul
+    display: flex
+
+    .tabs-item
+      flex: 1
+      color: #999
+      .tab
+        .tab-icon
+          width: px2rem(50)
+          height: px2rem(50)
+          margin: px2rem(14) auto 0
+        .tab-name
+          font-dpr: 10
+          text-align: center
+
+      .tab-home
+        .tab-icon
+          background: url('../../../assets/images/home/icon-home.png') no-repeat
+          background-size: 100% 100%
+      .tab-section
+        .tab-icon
+          background: url('../../../assets/images/home/icon-section.png') no-repeat
+          background-size: 100% 100%
+
+      .tab-msg
+        .tab-icon
+          background: url('../../../assets/images/home/icon-msg.png') no-repeat
+          background-size: 100% 100%
+          position: relative
+          .msg-num
+            position: absolute
+            right: px2rem(-30)
+            top: px2rem(-4)
+            background: #fe5454
+            color: #fff
+            font-dpr: 12
+            &.single
+              width: px2rem(40)
+              height: px2rem(40)
+              line-height: px2rem(40)
+              text-align: center
+              border-radius: px2rem(40)
+              border-radius: 100%
+            &.double
+              width: px2rem(50)
+              height: px2rem(40)
+              line-height: px2rem(40)
+              text-align: center
+              border-radius: px2rem(40)
+          .have-msg
+            position: absolute
+            width: px2rem(20)
+            height: px2rem(20)
+            border-radius: px2rem(20)
+            border-radius: 100%
+            background: #fe5454
+            right: px2rem(-10)
+            top: 0
+      .tab-more
+        .tab-icon
+          background: url('../../../assets/images/home/icon-more.png') no-repeat
+          background-size: 100% 100%
+          position: relative
+          .have-msg
+            position: absolute
+            width: px2rem(20)
+            height: px2rem(20)
+            border-radius: px2rem(20)
+            border-radius: 100%
+            background: #fe5454
+            right: px2rem(-10)
+            top: 0
+
+      &.active
+        color: #ff6c03
+        .tab-home
+          .tab-icon
+            background: url('../../../assets/images/home/icon-home-active.png') no-repeat
+            background-size: 100% 100%
+        .tab-section
+          .tab-icon
+            background: url('../../../assets/images/home/icon-section-active.png') no-repeat
+            background-size: 100% 100%
+        .tab-msg
+          .tab-icon
+            background: url('../../../assets/images/home/icon-msg-active.png') no-repeat
+            background-size: 100% 100%
+        .tab-more
+          .tab-icon
+            background: url('../../../assets/images/home/icon-more-active.png') no-repeat
+            background-size: 100% 100%

@@ -9,5 +9,5 @@ ReactDOM.render(
   <Provider store={store}>
     {routes}
   </Provider>,
-  document.querySelector('.react-container')
+  document.getElementById('app')
 );

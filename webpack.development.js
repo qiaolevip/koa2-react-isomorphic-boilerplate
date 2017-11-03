@@ -34,7 +34,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx|.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         include: includes,
         loader: 'babel-loader',
@@ -49,18 +49,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        loader: 'style!css'
       },
       {
         test: /\.styl$/,
         include: includes,
-        loader: 'style!css!stylus!postcss'
+        loader: 'style!css!postcss!stylus'
       },
-      {test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff'},
-      {test: /\.ttf$/, loader: 'url?limit=10000&minetype=application/octet-stream'},
-      {test: /\.eot$/, loader: 'file'},
-      {test: /\.svg$/, loader: 'url?limit=10000&minetype=image/svg+xml'},
-      {test: /\.(png|jpg|jpeg|gif)$/i, loader: 'url?limit=10000&name=[name].[ext]'},
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader?name=css/fonts/[name].[ext]'
+      },
+      {test: /\.(svg|png|jpe?g|gif)$/i, loader: 'url?limit=10000&name=[name].[ext]'},
       {test: /\.json$/, loader: 'json'},
       {test: /\.html?$/, loader: 'file?name=[name].[ext]'}
     ]

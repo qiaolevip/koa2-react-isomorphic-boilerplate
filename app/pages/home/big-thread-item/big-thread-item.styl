@@ -1,0 +1,79 @@
+@import '../../../assets/styles/common.styl'
+
+.big-thread-item
+  padding: px2rem(25) px2rem(30) px2rem(30)
+  margin: px2rem(20) 0
+  background: #fff
+  a 
+    display: block
+    // width: 100%
+    height: 100%
+  .thread-img
+    position: relative
+    width: 100%
+    height: px2rem(230)
+    overflow: hidden
+    background: url('../../../assets/images/home/default-thread-big-img.jpg') no-repeat
+    background-size: 100% 100%
+    img 
+      width: 100%
+      // height: 100%
+      display: block
+    .img-mask
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: url('../../../assets/images/home/banner-black-mask.png') no-repeat
+      background-size: 100% 100%
+    .thread-type
+      position: absolute
+      top: px2rem(18)
+      left: px2rem(25)
+      border: 1px solid #fff
+      border-radius: px2rem(4)
+      // width: px2rem(80)
+      padding: 0 px2rem(16)
+      height: px2rem(40)
+      line-height: px2rem(40)
+      text-align: center
+      color: #fff
+    .thread-title
+      position: absolute
+      bottom: px2rem(22)
+      width: 100%
+      font-dpr: 16
+      font-weight: bold
+      color: #f5f5f5
+      padding: 0 px2rem(22)
+      line-height: 1.4
+  .thread-info
+    color: #ccc
+    padding: px2rem(20) 0
+    font-dpr: 12
+    border-bottom: 1px solid #e5e5e5
+    .info-reply
+      float: left
+    .info-time
+      float: right
+  .thread-reply
+    margin-top: px2rem(20)
+    .reply-author
+      .reply-avatar
+        img
+          width: px2rem(36)
+          height: px2rem(36)
+          border-radius: px2rem(36)
+          vertical-align: bottom
+      .reply-name
+        font-dpr: 12
+        color: #666
+        margin-left: px2rem(8)
+    .reply-cont
+      font-dpr: 12
+      color: #999
+      margin-top: px2rem(10)
+
+  &+div
+    border-top: none
